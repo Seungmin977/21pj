@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * { margin: 0; padding: 0; }
+
+        ul , li { list-style:none; }
+        
+
+        .wrap { margin: 050px; }
+        .wrap li { margin: 0 0 20px 0 ; }
+        .wrap li a { display: block; width: 50px; line-height: 50px; background: #222; color: #fff; text-align: center; text-decoration: none; }
+        .wrap li ul { display: block; height: 0; background: #555; width: 100px; overflow: hidden; transition: height .3s; }
+        .wrap li ul li { }
+
+        .wrap li ul.on { height: 100px; }
+
+    </style>
+</head>
+<body>
+    <ul class="wrap">
+        <li>
+            <a href="javascript:void(0);">1</a>
+            <ul class="sub">
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">2</a>
+            <ul class="sub">
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">3</a>
+            <ul class="sub">
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);">4</a>
+            <ul class="sub">
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                <li><span>dddd</span></li>
+                
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        let list = document.querySelectorAll(".wrap li");
+
+        Array.prototype.forEach.call(list, function(lists) {
+            lists.addEventListener("click", function(listsList) {
+                console.log(lists.childNodes[3]);
+                lists.childNodes[3].classList.toggle("on");
+                // lists.childNodes[3].className = "sub on";
+            });
+        });
+
+    </script>
+</body>
+</html>
