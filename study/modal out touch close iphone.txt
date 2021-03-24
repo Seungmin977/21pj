@@ -1,0 +1,89 @@
+
+
+/* 결과 페이지 모달 */
+.modal_wrap { display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0, 0, 0, 0.5); z-index: 200; }
+.modal_wrap.on { display: block; }
+.modal_wrap .modal { position: relative; width: 51.25rem; padding: 3.12rem 0 1.25rem 3.12rem; margin: 5rem auto; background: #fff; }
+.modal_wrap .modal .modal_overay { opacity: 0; transition: opacity 0.2s; }
+.modal_wrap .modal.on .modal_overay { opacity: 1; }
+
+
+/* body 스크롤 방지 */
+.stop_scroll { height: 100%; overflow: hidden; }
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+/// 시험해야함 ////
+/* body 스크롤 방지 아이폰용 */
+.stop_scroll2 { position: fixed; width: 100%; overflow: hidden; transform: translate3d(0,0,0); -webkit-transform: translateZ(0); }
+/// 시험해야함 ////
+/* 그리고 fixed 가 들어가있는 div 와, 그 상위 div 에게 이 css 를 먹여주세요. */
+.scroll_clear { transform: translate3d(0,0,0); -webkit-transform: translateZ(0); -webkit-overflow-scrolling:touch; }
+------------------------------------------------------------------------------------------------------------------------------------
+
+javascript
+
+document.addEventListener("DOMContentLoaded", function(){
+    // 모달 창 
+    const modal = document.querySelector(".modal_wrap");
+    const modal_main = document.querySelector(".modal");
+    const modalOpen = document.querySelector(".modal_open");
+    const modalclose = document.querySelector(".close_btn");
+
+    modalOpen.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.className = "modal_wrap on";
+        document.body.className = "stop_scroll";
+        // modal.classList.add("scroll_clear");
+        setTimeout(function () {
+            modal_main.className = "modal on";
+        }, 20);
+    });
+
+    modalclose.addEventListener("click", function(e) {
+        e.preventDefault();
+        setTimeout(function () {
+            modal_main.className = "modal";
+        }, 50);
+        modal.className = "modal_wrap";
+        document.body.className = "";
+    });
+
+    window.addEventListener("click", function(e){
+        if(e.target == modal){
+            setTimeout(function () {
+                modal_main.className = "modal";
+            }, 50);
+            modal.className = "modal_wrap";
+            document.body.className = "";
+        }
+    });
+
+    // 아이폰
+    window.addEventListener("touchstart", function(e){
+        if(e.target == modal){
+            setTimeout(function () {
+                modal_main.className = "modal";
+            }, 50);
+            modal.className = "modal_wrap";
+            document.body.className = "";
+        }
+    });
+
+    // modal.addEventListener("click", function(e) {
+    //     e.target == modal ? modal.className = "modal_wrap" : false
+    //     e.target == modal ? (setTimeout(function () { modal_main.className = "modal"; }, 50)): false
+    //     e.target == modal ? document.body.className = "" : false
+    // });
+
+     // // 윈도우를 눌렀다면 on 삭제
+    // window.addEventListener('click', (e) => {
+    //     // e.target === modal ? modal.classList.remove('on') : false
+    //     e.target === modal ? modal.className = "modal_wrap" : false
+    //     e.target === modal ? document.body.className = "" : false
+    //     // e.target === modal ? document.body.classList.remove('stop_scroll') : false
+    // })
+
+});
+
+
