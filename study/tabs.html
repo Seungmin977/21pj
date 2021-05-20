@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin-top: 100px;
+    font-family: 'Trebuchet MS', serif;
+    line-height: 1.6
+    }
+    .container{
+        width: 500px;
+        margin: 0 auto;
+    }
+
+
+
+    ul.tabs{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    ul.tabs li{
+        background: none;
+        color: #222;
+        display: inline-block;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    ul.tabs li.current{
+        background: #ededed;
+        color: #222;
+    }
+
+    .tab-content{
+        display: none;
+        background: #ededed;
+        padding: 15px;
+    }
+
+    .tab-content.current{
+        display: inherit;
+    }
+    </style>
+</head>
+<body>
+    <!-- <div class="product_tap" style="clear:both;">
+        <ul class="tabul">
+            <li class="on" href="#tab1">Layouts</li>
+            <li href="#tab2" data-toggle="tab">Specifications</li>
+            <li href="#tab3">Gallery</li>
+        </ul>
+    </div> -->
+    <!-- tap 내용 -->
+    <!--tab1-->
+    <!-- <div id="tab1" class="panel">내용</div>
+    <div id="tab2" class="panel">내용</div> -->
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">메뉴_하나</li>
+            <li class="tab-link" data-tab="tab-2">메뉴_둘</li>
+            <li class="tab-link" data-tab="tab-3">메뉴_셋</li>
+        </ul>
+        <div id="tab-1" class="tab-content current">
+    ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ----
+        </div>
+        <div id="tab-2" class="tab-content">
+    ---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
+        </div>
+        <div id="tab-3" class="tab-content">
+    ---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+    function changeIframeUrl(url)
+    {
+        document.getElementById("video_main").src = url;
+    }
+
+        let tabBtn = document.querySelectorAll(".tab-link"); // tab 버튼 전체 가져오기
+        let tabContent = document.querySelectorAll(".tab-content"); // tab 컨텐츠 전체 가져오기
+
+        for(let i = 0; i < tabBtn.length; i++ ){ // 반복문 tab 버튼 1 , 2 ....
+            tabBtn[i].addEventListener("click",function(e){ // ex) tab[1] 첫번째 클릭 시
+                e.preventDefault(); //a 링크 기본 속성 제거
+                let target = e.target.getAttribute('href'); // 클릭한 버튼의 href 가져오기
+                let tabTarget = target.replace('#',''); // href 에서 # 제거 후 tabTarget에 넣음
+                
+                for(let y = 0; y < tabContent.length; y++ ){ // tab 컨텐츠에 각 no_active를 줘서 전체 안보이게 하기
+                    tabContent[y].classList.add("no_active");
+                }
+
+                document.getElementById(tabTarget).classList.remove("no_active"); // 선택된 # 제거된 tabtarget에 no_active 삭제하기 
+
+                for(let j = 0; j < tabBtn.length; j++ ){
+                    tabBtn[j].classList.remove("active"); // 각 선택된 버튼 중 기존에 active 제거
+                    e.target.classList.add('active'); // 선택된 버튼에 active 추가
+                }
+            });
+        }
+    });
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    http://ardor.net/dev/etc5/tabLink.htm
+
+    <a href="#tab1" class="tabLink">다른버튼1</a>
+    <script>
+        // 다른 a 를 클릭했을때
+        $("a.tabLink").click(function(){
+            $("ul.tabul li").removeClass("on");
+            $('ul.tabul li[href="'+$(this).attr('href')+'"]').addClass("on");
+            $(".panel").hide();
+            $($(this).attr("href")).fadeIn("slow");
+            return false;
+        });
+    </script>
+-->

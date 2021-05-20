@@ -1,0 +1,5 @@
+ // 윈도우를 눌렀다면 on 삭제
+    window.addEventListener('click', (e) => {
+        e.target === modal ? modal.classList.remove('on') : false
+        e.target === modal ? document.body.classList.remove('stop_scroll') : false
+    })

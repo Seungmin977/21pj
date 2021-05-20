@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ddd</title>
+    <style>
+        .url_btn {
+            position: relative;
+            background: none;
+            border: 0;
+            color: #000;
+            font-size: 20px;
+        }
+
+        .url_btns input {
+            position: absolute;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="url_btns">
+        <button class="url_btn">클립보드로 복사</button>
+        <input class="myInput" value="1111">
+    </div>
+    <div class="url_btns">
+        <button class="url_btn">클립보드로 복사</button>
+        <input class="myInput" value="222">
+    </div>
+    <div class="url_btns">
+        <button class="url_btn">클립보드로 복사</button>
+        <input class="myInput" value="333">
+    </div>
+    <!-- <button class="url_btn">클립보드로 복사
+        <input class="myInput" value="Hello,!">
+    </button>
+    <button class="url_btn">클립보드로 복사
+        <input class="myInput" value="Hello22">
+    </button>
+    <button class="url_btn">클립보드로 복사
+        <input class="myInput" value="Hello33">
+    </button> -->
+    <script>
+        // 링크 복사 스크립트
+        function copy_to_clipboard(e) {
+            e.select(); // 복사할 대상 선택
+            document.execCommand("Copy"); // 대상 복사
+            alert('URL 주소가 복사 되었습니다'); // 복사 알림
+        }
+
+        let btn = document.querySelectorAll(".url_btn"); // 모든 btn 가져오기
+        // console.log(btn); 
+
+        for (i = 0; i < btn.length; i++) { // 불러온 각 버튼을
+            btn[i].addEventListener("click", function (e) { // 클릭 했을때
+                let target = e.target; // 클릭한 대상에
+                console.log(target);
+                let copy = target.nextSibling.nextSibling;
+                // 다음 대상을(nextsibling을 2번쓴 이유는 개항문자때문임(\n) 형식의 텍스트 노드)
+                // console.log(copy);
+                copy_to_clipboard(copy); //대상을 넘김
+            });
+        }
+
+        // for (i = 0; i < btn.length; i++) {
+        //     btn[i].addEventListener("click", function (e) {
+        //         let target = e.target;
+        //         let copy = target.childNodes[1];
+        //         // console.log(target.childNodes[1]);
+        //         copy_to_clipboard(copy);
+        //     });
+        // }
+    </script>
+</body>
+
+</html>

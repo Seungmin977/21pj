@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>headerScroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header { 
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+            align-items: center;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+
+        .fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        .d {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+        <nav>
+            <ul>
+                <li>ddd1</li>
+                <li>ddd2</li>
+                <li>ddd3</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="d">
+
+    </div>
+    <script>
+        window.addEventListener("scroll",function() {
+            const headerBar = document.querySelector("header");
+            let headerH = headerBar.offsetTop;
+            let winW = window.pageYOffset;
+
+            if(winW > headerH){
+                headerBar.classList.add("fixed");
+            } else {
+                headerBar.classList.remove("fixed");
+            }
+            
+        });
+    </script>
+</body>
+</html>

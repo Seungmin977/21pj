@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /*============================================================
+        sns
+        ============================================================*/
+        .btns {
+            display: block;
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            max-width: 750px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .btns .btn_list {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btns li {
+            width: 50%;
+        }
+
+        .btns a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10.37rem;
+            background: url(../../content/images/app-image.png);
+            background-size: cover;
+            font-size: 1.81rem;
+            color: #ffffff;
+        }
+
+        .btns a:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10%;
+            width: 100%;
+            height: 11.37rem;
+            box-shadow: 0px 0px 60px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 2rem 2rem 0 0;
+        }
+
+
+        .btns a span {
+            padding-top: 4.37rem;
+            position: relative;
+            line-height: 1.33;
+            font-weight: 500;
+        }
+
+        .btns a span:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3rem;
+            height: 3.06rem;
+            background: url(../../content/images/pen-image.png);
+            background-size: cover;
+        }
+
+        .btns li:nth-child(2) a span:before {
+            width: 2.87rem;
+            height: 3.18rem;
+            background: url(../../content/images/share-image.png);
+            background-size: cover;
+        }
+
+        .sns_list_wrap {
+            display: none;
+            position: absolute;
+            top: -70%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .sns_list_wrap .sns_list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .sns_list li a {
+            background: none;
+            width: 7.37rem;
+            height: 7.37rem;
+        }
+
+        .sns_list li a:before {
+            display: none;
+        }
+
+        .sns_list_wrap.on {
+            display: block;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        .btnani {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            transition: all 0.5s;
+        }
+
+        .sns_list {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            transition: all 1s;
+        }
+
+        .sns_list.on {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .sns_list.on .btnani {
+            color: #000;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .btnani.on {
+            -webkit-transform: scale(1);
+            transform: scale(01);
+        }
+
+        /* 애니메이션 */
+        .delay1.on {
+            transition: transform 0.5s;
+        }
+
+        .delay.on {
+            transition: transform 0.65s;
+        }
+
+        .delay3.on {
+            transition: transform 0.75s;
+        }
+
+        .delay4.on {
+            transition: transform 0.85s;
+        }
+
+        .delay5.on {
+            transition: transform 0.95s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btns">
+        <ul class="btn_list">
+            <li><a href="javascript:void(0);"><span>아이부자앱<br>알아보기</span></a></li>
+            <li class="sns">
+                <a href="javascript:void(0);">
+                    <span>부자 MBTI<br>소문내기</span>
+                </a>
+            </li>
+            <!-- //sns -->
+        </ul>
+        <!-- //btn_list -->
+        <div class="sns_list_wrap">
+            <ul class="sns_list">
+                <li class="mr10">
+                    <a href="javascript:void(0);" class="btnani delay1"><img
+                            src="../../content/images/share_facebook_mb.png" alt="페이스북"></a>
+                </li>
+                <li class="mr10">
+                    <a href="javascript:void(0);" class="btnani delay2"><img
+                            src="../../content/images/share_twitter_mb.png" alt="트위터"></a>
+                </li>
+                <li class="mr10">
+                    <a href="javascript:void(0);" class="btnani delay3"><img
+                            src="../../content/images/share_kakao_mb.png" alt="카카오톡"></a>
+                </li>
+                <li class="mr10">
+                    <a href="javascript:void(0);" class="btnani delay4">
+                        <img src="../../content/images/share_naver_blog_mb.png" alt="네이버 블로그">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="btnani delay5"><img
+                            src="../../content/images/share_image2_mb.png" alt="링크 공유하기"></a>
+                </li>
+            </ul>
+            <!-- //sns_list -->
+        </div>
+        <!-- //sns_list_wrap -->
+    </div>
+    <!-- //btns -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // sns 공유
+            const sharebtn = document.querySelector(".btns .sns");
+            const shareList = document.querySelector(".btns .sns_list_wrap");
+            const snsList = document.querySelector(".sns_list_wrap .sns_list");
+            const btnAni = document.querySelectorAll(".btnani");
+
+            sharebtn.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                shareList.classList.toggle("on");
+
+                setTimeout(function () {
+                    snsList.classList.toggle("on");
+                }, 100);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

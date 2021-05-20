@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <style>
+        * { margin: 0; padding: 0; }
+        ul, li { list-style: none; }
+        h2 { text-align: center; }
+
+        ul { display: flex; max-width: 800px; margin: 0 auto; justify-content: space-between; flex-wrap: wrap; }
+        li { width: 49%; margin-right: 0; height: 200px; margin: 0 0 100px; transition: width .5s; }
+        li:nth-child(2n) { margin-right: 0; margin-bottom: 0; }
+        .thumbbox { width: 100%; height: 100%; background: #222; } 
+
+
+        @media (max-width:560px) {
+            li { width: 100%; }
+        }
+
+        .scrolls {}
+        .effect { transform: translateY(30px); opacity: 0; transition: transform 1s, opacity 1s; }
+        .effect.on { transform: translateY(0); opacity: 1; }
+
+        .test-wrap { height: 2000px; display: flex; flex-direction: column; align-items: center; justify-self: center; }
+        .test1 { height: 100vh; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s; }
+        .test2 { font-size: 3rem; }
+        .test3 { font-size: 2.4rem; }
+
+        .test1.on {
+            position: sticky;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes anime2 {
+            0% { color: #000; }
+            100% { color: #fff; }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h2>대표 상품</h2>
+        <ul>
+            <li class="">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+            <li class="scrolls effect">
+                <div class="thumbbox">
+                    <img src="" alt="">
+                </div>
+            </li>
+        </ul>
+        <div class="test-wrap">
+            <div class="test1 scrolls2">
+                <p class="test2">스크롤 애니메이션 테스트</p>
+            </div>
+            <div class="test1">
+                <p class="test3">스크롤 애니메이션 테스트</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+            //스크롤 애니메이션
+            window.addEventListener("scroll", function() {
+                let winW = window.pageYOffset; //윈도우 크기
+                let scrolls = document.querySelectorAll(".scrolls"); //scrolls 클래스 전부
+                let scrolls2 = document.querySelectorAll(".scrolls2"); //scrolls 클래스 전부
+                // let effect = document.querySelector(".effect").offsetTop; // 이펙트 라는 클래스 의 offsetTOP 값
+                let winHeight = window.outerHeight; //문서 크기
+                let winsHeight = document.outerHeight;
+                let test = document.querySelector(".test-wrap").offsetTop;
+                console.log(winW);
+
+                // const partScrollStart = 0.1 * offs1;
+                // const partScrollEnd = 0.2 * offs1;
+                // const partScrollHeight = partScrollStart - partScrollEnd;
+                // let opacityValue = ( offs1 - partScrollStart ) / partScrollHeight * ( 1 - 0 ) + 0;
+
+                // opacity 스크롤 값 구하기 
+                // const partScrollStart = 0.1 * scrollHeight;
+                // const partScrollEnd = 0.2 * scrollHeight;
+                // const partScrollHeight = partScrollStart - partScrollEnd;
+                // let opacityValue = ( currentYOffset - partScrollStart ) / partScrollHeight * ( 1 - 0 ) + 0;
+                // //opacity 스크롤 값 구하기
+
+                Array.prototype.forEach.call(scrolls, function(sg) { //배열 foreach로 불름
+                    let offs = sg.offsetTop;
+
+                    if(winW + winHeight / 1.5> offs) {
+                        sg.classList.add("on");
+                    }
+                });
+
+                Array.prototype.forEach.call(scrolls2, function(sg2) { //배열 foreach로 불름
+                    let offs1 = sg2.offsetTop;
+                    let offsH = sg2.offsetHeight;
+
+                    const start = 0.1 * offsH;
+                    const end = 0.2 * offsH;
+                    const hegiht = end - start;
+
+                    // let ot = (offs1 - start) / hegiht;
+                    // let ot = ((winW - offs1) - start) / hegiht;
+                    let ot = ((winW / 14) - start) / hegiht * ( 1 - 0 ) + 0;
+
+                    if(winW + winHeight / 1.5 > test) {
+                        sg2.style.position = "fixed";
+                        sg2.style.top = 0;
+                        sg2.style.left = "50" + "%";
+                        sg2.style.transform = "translateX(" + "-50%)";
+                        sg2.style.opacity = ot;
+
+                        if ( 0.2 > ot){
+                            sg2.style.opacity = 0;
+                        }
+                    }
+                });
+
+                // Array.prototype.forEach.call(scrolls2, function(sg2) { //배열 foreach로 불름
+                //     let offs1 = sg2.offsetTop;
+
+                //     console.log(offs1);
+
+                //     let start = 0.1 * offs1;
+                //     console.log(start + "dd");
+                //     let end = 0.2 * offs1;
+                //     // console.log(end);
+                //     let hegiht = end - start;
+
+                //     // console.log(offs1 + "offs1");
+
+                //     if(winW + winHeight > offs1) {
+                //         // sg2.style.opacity = (offs1 - winW) / offs1;
+                //         sg2.style.opacity = ((winW + winHeight) - offs1) / winW;
+                //         // sg2.style.opacity =  (winW - start) / hegiht * (1 - 0) + 0;
+                //         // sg2.style.opacity = (winW - start) / hegiht * (1 - 0) + 0;
+                //     }
+                // });
+
+
+            });
+    </script>
+</body>
+</html>

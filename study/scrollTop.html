@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        .nav {
+            text-align: center;
+        }
+
+        .nav_list {
+            display: flex;
+            list-style: none;
+            width: 900px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav_list li {
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav_list">
+                <li><a href="#javascript:void(0);" data-num="1">1</a></li>
+                <li><a href="#javascript:void(0);" data-num="2">2</a></li>
+                <li><a href="#javascript:void(0);" data-num="3">3</a></li>
+                <li><a href="#javascript:void(0);" data-num="4">4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="top top1">
+    </div>
+    <div class="top top2">
+    </div>
+    <div class="top top3">
+    </div>
+    <div class="top top4">
+    </div>
+
+    <script>
+        //상단에 fixed 메뉴영역이 있다면, 메뉴때문에 메뉴의 높이만큼 스크롤이 가려질 수 있다. 
+        // var menuHeight = document.querySelector(".menu").offsetHeight; // 메뉴의 높이
+        let height1 = document.querySelector(".top1").offsetTop;
+        let height2 = document.querySelector(".top2").offsetTop;
+        let height3 = document.querySelector(".top3").offsetTop;
+        let height4 = document.querySelector(".top4").offsetTop;
+
+
+        function scrolls(e) {
+
+            if (e == 1) {
+                window.scrollTo({
+                    top: height1,
+                    behavior: 'smooth'
+                });
+            } else if (e == 2) {
+                window.scrollTo({
+                    top: height2,
+                    behavior: 'smooth'
+                });
+            } else if (e == 3) {
+                window.scrollTo({
+                    top: height3,
+                    behavior: 'smooth'
+                });
+            } else if (e == 4) {
+                window.scrollTo({
+                    top: height4,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        console.log(height3);
+        let navBtn = document.querySelectorAll(".nav_list li a");
+
+        for (i = 0; i < navBtn.length; i++) {
+            navBtn[i].addEventListener("click", function (e) {
+                e.preventDefault();
+                let target = e.target;
+                // console.log(target);
+                let dataNum = target.getAttribute("data-num");
+                // let dataNum = "height" + target.getAttribute("data-num");
+                // let dataOffset = dataNum.offsetTop;
+                // console.log(dataNum);
+                scrolls(dataNum);
+            });
+        }
+    </script>
+</body>
+
+</html>
