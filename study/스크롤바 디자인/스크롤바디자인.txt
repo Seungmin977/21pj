@@ -1,0 +1,51 @@
+
+/* 스크롤바
+::-webkit-scrollbar : 스크롤바 전체
+::-webkit-scrollbar-thumb : 스크롤 막대
+::-webkit-scrollbar-track : 스크롤 막대 외부
+앞에는 스크롤바 생성한 클래스
+
+.popup_cont_wrap::-webkit-scrollbar { width: 25px; }
+.popup_cont_wrap::-webkit-scrollbar-thumb { background-color: #532d1a; }
+.popup_cont_wrap::-webkit-scrollbar-track {  background-color: #f4e8e4; }
+/* 스크롤 바 넓이 16px */
+/* ::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* 스크롤 바 기본 색상 */
+/* ::-webkit-scrollbar-track {
+  background-color: thistle;
+} */
+
+/* 스크롤 구간 배경 색상 */
+/* ::-webkit-scrollbar-thumb {
+  background-color: slateblue;
+} */ */
+
+/* 스크롤 바 위에 마우스 올렸을 때(hover) 색상 */
+/* ::-webkit-scrollbar-thumb:hover {
+  background-color: blueviolet;
+} */
+
+/* 스크롤 상하단 버튼 넓이와 색상 */
+/* ::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  width: 16px;
+  height: 16px;
+  background-color: mediumpurple;
+} */
+
+
+스크롤바 양 옆 넓이
+.info_box::-webkit-scrollbar-thumb {
+    background-color: #c2c4c6;
+    background-clip: padding-box;
+    border: 8px solid transparent;
+    border-radius: 25px;
+}
+background-clip: padding-box; 를 주고
+border: 8px solid transparent;
+로 양 옆에 공백 줄 수 있음
+
+

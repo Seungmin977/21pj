@@ -1,0 +1,22 @@
+ // navBar색상 조정 on off 
+        // if (winW + winHeight / 2 < safe) {
+        //     document.querySelector(".nav ul li").classList.add("on");
+        //     document.querySelector(".nav ul li:nth-child(2)").classList.remove("on");
+        //     document.querySelector(".nav ul li:nth-child(3)").classList.remove("on");
+        //     document.querySelector(".nav ul li:nth-child(4)").classList.remove("on");
+        // } else if (winW + winHeight / 2 < voting) {
+        //     document.querySelector(".nav ul li:nth-child(2)").classList.add("on");
+        //     document.querySelector(".nav ul li:nth-child(3)").classList.remove("on");
+        //     document.querySelector(".nav ul li").classList.remove("on");
+        //     document.querySelector(".nav ul li:nth-child(4)").classList.remove("on");
+        // } else if (winW + winHeight / 2 < pledge){
+        //     document.querySelector(".nav ul li:nth-child(3)").classList.add("on");
+        //     document.querySelector(".nav ul li:nth-child(2)").classList.remove("on");
+        //     document.querySelector(".nav ul li").classList.remove("on");
+        //     document.querySelector(".nav ul li:nth-child(4)").classList.remove("on");
+        // } else {
+        //     document.querySelector(".nav ul li:nth-child(4)").classList.add("on");
+        //     document.querySelector(".nav ul li:nth-child(2)").classList.remove("on");
+        //     document.querySelector(".nav ul li:nth-child(3)").classList.remove("on");
+        //     document.querySelector(".nav ul li").classList.remove("on");
+        // }

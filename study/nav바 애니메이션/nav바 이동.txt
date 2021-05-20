@@ -1,0 +1,48 @@
+
+
+<nav class="nav">
+        <ul class="nav_list">
+            <li><a href="#safe" class="red fb">#내가늘지켜요</a></li>
+            <li><a href="#video" class="orange fb">캠페인 영상</a></li>
+            <li><a href="#event" class="green fb">서약 참여</a></li>
+            <li><a href="#join" class="green2 fb">멈춤 인증 이벤트</a></li>
+        </ul>
+        <!-- //nav_list -->
+    </nav>
+    <!-- //nav -->
+
+
+(function ($) {
+        // navbar 애니메이션
+        const navbar = $(".nav .nav_list li");
+        let navHeight = navbar.height();
+
+            navbar.click(function(e) {
+                e.preventDefault();
+    
+                const safe = $("#safe").offset().top - navHeight; // 각 스크롤 대상
+                const video = $("#video").offset().top - navHeight;
+                const event = $("#event").offset().top - navHeight;
+                const join = $("#join").offset().top - navHeight;
+    
+                let target = $(this);
+                let index = target.index();
+    
+                if( index==0 ) {
+                    $("html, body").animate({ scrollTop: safe }, 600);
+                } else if ( index==1 ) {
+                    $("html, body").animate({ scrollTop: video  }, 600);
+                } else if (index==2){
+                    $("html, body").animate({ scrollTop: event }, 600);
+                } else {
+                    $("html, body").animate({ scrollTop: join }, 600);
+                }
+            });
+            // 페이지 가장 상단으로 이동
+        const pageTop = $(".header .header_logo > a");
+            pageTop.click(function(e) {
+                e.preventDefault();
+                const pageTo = $("html").offset().top;
+                $("html, body").animate({ scrollTop: pageTo }, 600);
+        });
+    })(jQuery);

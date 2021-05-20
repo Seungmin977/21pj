@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>2021 ZEISS Protection ONLINE LAUNCHING</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge"> <!-- IE 문서 모드 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!--<meta name="author" content="">-->
+    <meta name="keywords" content="자이스, ZEISS, 자이스 온라인 런칭, 자이스 프로텍션 런칭, 자이스 온라인 런칭쇼, 자이스 프로텍션">
+    <meta name="description" content="자이스 프로텍션 출시 배경과 기술을 설명하는 자이스 프로텍션 온라인 런칭쇼">
+
+    <!-- common meta tag -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="" >
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="../../content/images/ogimage.png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="315">
+
+    <!-- twitter meta tag -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="../../content/images/ogimage.png">
+    <!-- og 이미지는 최상단에 -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../content/images/favicon.ico"> <!-- Chrome, Safari, IE (.ico) -->
+    <link rel="icon" type="image/x-icon" href="../../content/images/favicon.ico"> <!-- Firefox, Opera (.png) -->
+
+    <link rel="stylesheet" href="../../content/styles/common.css">
+    <link rel="stylesheet" href="../../content/styles/style.css">
+    <link rel="stylesheet" href="../../content/styles/sub1.css">
+    <link rel="stylesheet" href="../../content/styles/main.css">
+    <!-- 웹 폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="header sub1">
+        <div class="wrap1170">
+            <div class="header_title">
+                <div class="header_left">
+                    <p>2021 ZEISS PROTECTION ONLINE LAUNCHING</p>
+                        <a href="javascript:void(0);"><span>홍길동님 반갑습니다.</span></a>
+                </div>
+                <h1 class="header_logo">
+                    <img src="../../content/images/zeiss-main-logo.png" class="pc_logo" alt="ZEISS">
+                    <img src="../../content/images/zeiss-main-mb-logo.png" class="mb_logo" alt="ZEISS">
+                </h1>
+            </div>
+        </div>
+    </header>
+    <section class="launching_cont ready">
+        <div class="wrap1170">
+            <h2 class="launching_cont_title">
+                2021<br>
+                자이스 프로텍션<br>
+                온라인 런칭 이벤트
+            </h2>
+            <div class="launching_cont_info">
+                <p>
+                    2021.04.21.(수) 11AM
+                    <span>
+                        참석해 주신 여러분 반갑습니다. 새로운 솔루션을 소개하는 행사에 함께 해주셔서 감사합니다.<br>
+                        자이스 프로텍션 출시 배경과 기술에 대한 설명을 온라인 런칭 행사를 통해 제공합니다.
+                    </span>
+                </p>
+            </div>
+            <div class="launching_cont_main mb100">
+                <p class="launching_cont_main_text1">
+                    2021 ZEISS PROTECTION<br>
+                    ONLINE LAUNCHING
+                </p>
+                <div class="main_timer">
+                    <div class="times">
+                        <div id="hour" class="timer_box">
+                            <!-- key724 : id 지정-->
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                        <em>Hours</em>
+                    </div>
+                    <div class="times">
+                        <div id="min" class="timer_box">
+                            <!-- key724 : id 지정-->
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                        <em>Minutes</em>
+                    </div>
+                    <div class="times">
+                        <div id="sec" class="timer_box">
+                            <!-- key724 : id 지정-->
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                        <em>Seconds</em>
+                    </div>
+                </div>
+
+                <!-- key724 : 스크립트 시작-->
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date(2021, 3, 24, 9, 0, 0).getTime(); //시작일자(데모 : 2021.04.24 9:00:00) (주의! 월은 -1 할것)
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function () {
+
+                        var now = new Date().getTime(); // 현재 시간
+                        var distance = countDownDate - now; // 남은 시간
+
+                        if (distance < 0) {
+                            clearInterval(x);
+                            alert("컨퍼런스가 시작되었습니다.\n지금 바로 시청하세요.");
+                            document.getElementById("hour").innerHtml = "<span>0</span><span>0</span>";
+                            document.getElementById("min").innerHtml = "<span>0</span><span>0</span>";
+                            document.getElementById("sec").innerHtml = "<span>0</span><span>0</span>";
+                        }
+                        else {
+                            var days = Math.floor(distance / (1000 * 60 * 60 * 24)); // 남은 시간 날짜
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + (days * 24); // 남은 시간
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); // 남은 분
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000); // 남은 초
+
+                            var hoursStr = hours.toString(); //두자리수 시간
+                            if (hoursStr.length == 1) {
+                                document.getElementById("hour").innerHTML = "<span>0</span><span>" + hoursStr + "</span>";
+                            }
+                            else {
+                                document.getElementById("hour").innerHTML = "<span>" + hoursStr.substr(0, 1) + "</span><span>" + hoursStr.substr(1, 1) + "</span>";
+                            }
+
+                            var minutesStr = minutes.toString(); //두자리수 분
+                            if (minutesStr.length == 1) {
+                                document.getElementById("min").innerHTML = "<span>0</span><span>" + minutesStr + "</span>";
+                            }
+                            else {
+                                document.getElementById("min").innerHTML = "<span>" + minutesStr.substr(0, 1) + "</span><span>" + minutesStr.substr(1, 1) + "</span>";
+                            }
+
+                            var secondsStr = seconds.toString(); //두자리수 초
+                            if (secondsStr.length == 1) {
+                                document.getElementById("sec").innerHTML = "<span>0</span><span>" + secondsStr + "</span>";
+                            }
+                            else {
+                                document.getElementById("sec").innerHTML = "<span>" + secondsStr.substr(0, 1) + "</span><span>" + secondsStr.substr(1, 1) + "</span>";
+                            }
+                        }
+                    }, 1000);
+                </script>
+                <!-- key724 : 스크립트 종료-->
+
+                <p class="launching_cont_main_text2 pt60">
+                    2021.04.21.(수) 11AM 온라인 런칭 행사가 시작됩니다.
+                </p>
+                <div class="content_btn pt30 pb100">
+                    <a href="main-b-1.html">온라인 런칭 행사 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="agenda_cont">
+        <div class="wrap1170">
+            <h3 class="launching_cont_form_title ready">Agenda</h3>
+            <div class="agenda_cont_list flex-box flex-col">
+                <ul class="flex-box flex-row flex-spc__btw">
+                    <li><span class="fcblue">내용</span></li>
+                    <li><span class="fcblue">스피커</span></li>
+                </ul>
+                <ul class="flex-box flex-row flex-spc__btw">
+                    <li><span>자이스 프로텍션 출시 배경</span></li>
+                    <li><span>이정민 이사</span></li>
+                </ul>
+                <ul class="flex-box flex-row flex-spc__btw">
+                    <li><span>자이스 블루가드 안티바이러스 렌즈 소개</span></li>
+                    <li><span>윤정호 원장 & 박은성 차장</span></li>
+                </ul>
+                <ul class="flex-box flex-row flex-spc__btw">
+                    <li><span>감사 인사말</span></li>
+                    <li><span>최익준 대표</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="speakers_cont">
+        <div class="wrap1170">
+            <h3 class="launching_cont_form_title ready">Speakers</h3>
+            <div class="speakers_cont_list">
+                <ul class="flex-box flex-spc__btw flex-align__cnt">
+                    <li>
+                        <dl>
+                            <dt>
+                                <strong>이정민</strong>
+                                <em>이사</em>
+                                <span>칼 자이스 비전 코리아</span>
+                            </dt>
+                            <dd>
+                                <p>
+                                    <span>2016~</span>
+                                    <span>칼자이스 비전 코리아 마케팅 이사</span>
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="speakers_cont_list_image">
+                            <img src="../../content/images/photo1.png" alt="이정민 사진">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="flex-box flex-spc__btw flex-align__cnt">
+                    <li>
+                        <dl>
+                            <dt>
+                                <strong>윤정호</strong>
+                                <em>원장</em>
+                                <span>칼 자이스 비전 코리아</span>
+                            </dt>
+                            <dd>
+                                <p>
+                                    <span>2012~</span>
+                                    <span>칼자이스 비전 코리아 자이스 아카데미 교육 원장</span>
+                                </p>
+                                <p>
+                                    <span>2010</span>
+                                    <span>춘해 보건대학교 안경광학과 전임교수</span>
+                                </p>
+                                <p>
+                                    <span>2009</span>
+                                    <span>호주 The University of New South Wales 검안학 박사 </span>
+                                </p>
+                                <p>
+                                    <span>1999</span>
+                                    <span>영남대학교 이학사(수학과)</span>
+                                </p>
+                                <p>
+                                    <span>1994</span>
+                                    <span>대구보건대학교 전문학사(안경광학과)</span>
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="speakers_cont_list_image">
+                            <img src="../../content/images/photo2.png" alt="윤정호 사진">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="flex-box flex-spc__btw flex-align__cnt">
+                    <li>
+                        <dl>
+                            <dt>
+                                <strong>박은성</strong>
+                                <em>차장</em>
+                                <span>칼 자이스 비전 코리아</span>
+                            </dt>
+                            <dd>
+                                <p>
+                                    <span>2017~</span>
+                                    <span>칼자이스 비전 코리아 자이스 아카데미 교육 담당</span>
+                                </p>
+                                <p>
+                                    <span>2016</span>
+                                    <span>칼자이스 비전 코리아 세일즈, 키 어카운트 매니저</span>
+                                </p>
+                                <p>
+                                    <span>2008</span>
+                                    <span>칼자이스 비전 코리아 세일즈, 서울 지역 담당</span>
+                                </p>
+                                <p>
+                                    <span>2008</span>
+                                    <span>초당대학교 학사(안경광학과)</span>
+                                </p>
+                                <p>
+                                    <span>1999</span>
+                                    <span>강동대학교 전문학사(안경광학과)</span>
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="speakers_cont_list_image">
+                            <img src="../../content/images/photo3.png" alt="박은성 사진">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="flex-box flex-spc__btw flex-align__cnt">
+                    <li>
+                        <dl>
+                            <dt>
+                                <strong>최익준</strong>
+                                <em>대표</em>
+                                <span>칼 자이스 비전 코리아</span>
+                            </dt>
+                            <dd>
+                                <p>
+                                    <span>2011~</span>
+                                    <span>칼자이스 비전 코리아 대표이사</span>
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <div class="speakers_cont_list_image">
+                            <img src="../../content/images/photo4.png" alt="최익준 사진">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer_wrap wrap1170">
+            <p class="footer_text">COPYRIGHT© ZEISS Co., Ltd. ALL RIGHTS RESERVED.</p>
+            <div class="footer_btn">
+                <a href="개인정보처리방침.html">개인정보 처리방침</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

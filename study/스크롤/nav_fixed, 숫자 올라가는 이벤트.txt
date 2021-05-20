@@ -1,0 +1,48 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+// 스크롤 이벤트
+    window.addEventListener("scroll",function() {
+        const navBar = document.querySelector(".nav");
+        const navH = document.querySelector(".nav").offsetTop;
+        const header = document.querySelector(".sk_campaign_info");
+        const headerTop = document.querySelector(".sk_campaign_info").offsetTop;
+        let winHeight = window.outerHeight; //문서 크기
+        let winW = window.pageYOffset; // 현재 스크롤
+        const eventH = document.querySelector(".pledge_event").offsetTop;
+
+        // fixed 헤더 고정 
+        if(winW >= navH){
+            // navBar.className ="nav fixed";
+            navBar.classList.add("fixed");
+            header.classList.add("cont_fixed");
+        } 
+
+        if(headerTop >= winW) {
+            navBar.classList.remove("fixed");
+            header.classList.remove("cont_fixed");
+        }
+
+        //person count 숫자 올라가는 이벤트
+        if( winW + winHeight / 3 >= eventH){
+            //person count
+            var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
+            
+            $('.p_count').animateNumber({
+                number: 999999,
+                numberStep: comma_separator_number_step,
+
+                // optional custom step function
+                // using here to keep '%' sign after number
+                // numberStep: function (now, tween) {
+                //     var floored_number = Math.floor(now),
+                //         target = $(tween.elem);
+
+                //     target.text(floored_number);
+                // }
+            }, {
+                easing: 'swing',
+                duration: 2000
+            });
+        }
+    });
+});
