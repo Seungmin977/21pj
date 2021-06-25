@@ -1,0 +1,21 @@
+두줄 이상 효과
+
+.rcm_partner_wrap dd p {
+    /* 21 05 24 네이블 수정  */
+    /* height: 6.75rem;
+    -webkit-line-clamp: 5; */
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+
+
+.data-card-event-info__tit
+
+font-size 1.2rem;
+

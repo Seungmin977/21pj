@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+
+
+.from_check {
+    position: relative;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+
+
+.form_lay div {
+    width: 47.43%;
+    margin: 0 0 2.5rem;
+}
+
+
+.form_lay input[type="tel"],
+.form_lay input[type="text"] {
+    padding: 0 0 0 2.5rem;
+    width: 100%;
+    height: 3.75rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+    border: 1px solid #e0e1dd;
+}
+
+
+.form_lay input[type="radio"]+label span {
+    position: relative;
+    display: block;
+    padding: 0 0 0 3.5rem;
+    font-size: 1.25rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
+}
+
+.form_lay input[type="radio"]+label span:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #e2e3df;
+    border-radius: 50%;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.form_lay input[type="radio"]:checked+label span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: #152286;
+}
+
+.form_lay input[type="checkbox"]+label span {
+    position: relative;
+    padding: 0 0 0 3.25rem;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+
+.form_lay input[type="checkbox"]+label span:after,
+.form_lay input[type="checkbox"]+label span:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
+.form_lay input[type="checkbox"]+label span:before {
+    content: '';
+    border: 1px solid #e0e1dd;
+    background: url(../../content/images/sub1-check-btn.png) 50% 50%;
+    background-size: cover;
+}
+
+
+
+
+/* 생년월일 포함  */
+
+.wrap750 {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.event_wrap .title {
+    font-size: 4.37rem;
+    color: #231f20;
+    font-weight: 400;
+}
+
+.event_wrap .flex-box label {
+    font-size: 2.5rem;
+    color: #757679;
+    font-weight: 400;
+}
+
+.event_wrap .flex-box input,
+.event_wrap .flex-box select {
+    width: 100%;
+    padding: 0 0 0 1.56rem;
+    height: 8.12rem;
+    font-size: 2.81rem;
+    color: #8c8e90;
+    border: 2px solid #c6c8ca;
+    border-radius: 0.62rem;
+}
+
+.births {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event_wrap .flex-box select {
+    width: 31.34%;
+    background: url(../../content/images/option-btn.png) no-repeat center right 0.62rem;
+    background-size: 1.56rem;
+}
+
+.event_wrap .info_box {
+    padding: 0 2rem;
+    width: 100%;
+    height: 11.25rem;
+    max-height: 11.25rem;
+    overflow-y: scroll;
+    border: 2px solid #c6c8ca;
+    border-radius: 0.62rem;
+}
+
+.info_box::-webkit-scrollbar {
+    width: 25px;
+    margin-right: 20px;
+}
+
+.info_box::-webkit-scrollbar-thumb {
+    background-color: #c2c4c6;
+    background-clip: padding-box;
+    border: 8px solid transparent;
+    border-radius: 25px;
+}
+
+.info_box::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.privacy dl {
+    font-weight: 400;
+}
+
+.privacy dt {
+    font-size: 2.5rem;
+    color: #757679;
+}
+
+.privacy dd {
+    font-size: 1.75rem;
+    color: #999b9e;
+    line-height: 1.35;
+}
+
+.privacy .policy-wrap {
+    text-align: center;
+}
+
+.privacy .policy-wrap dt {
+    font-size: 1.56rem;
+    line-height: 1.5;
+}
+
+.privacy .policy-wrap p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.check_btn {
+    padding: 0 0 7.5rem;
+    position: relative;
+    font-size: 2.5rem;
+    color: #8c8e90;
+}
+
+.check_btn input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.check_btn span {
+    position: relative;
+    padding: 0 0 0 4.06rem;
+}
+
+.check_btn span:before,
+.check_btn span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.check_btn span:before {
+    width: 3.12rem;
+    height: 3.12rem;
+    border-radius: 50%;
+    left: 0;
+    background: #c2c4c6;
+}
+
+.check_btn span:after {
+    left: 4.5%;
+    width: 1.68rem;
+    height: 1.37rem;
+    background: url(../../content/images/check-btn.png);
+    background-size: cover;
+}
+
+.check_btn input[type="checkbox"]:checked+label span:before {
+    background: #65d2d2;
+}

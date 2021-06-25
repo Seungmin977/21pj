@@ -1,0 +1,12 @@
+//upload file name event
+function uploadFileName() {
+    $(".form-file").find("input[type='file']").change(function(e){
+        var fileName = e.target.files[0].name;
+        $(this).parents().siblings(".form-input-txt").val(fileName);
+    });
+}
+
+
+/*============================================================
+공통 
+============================================================*/

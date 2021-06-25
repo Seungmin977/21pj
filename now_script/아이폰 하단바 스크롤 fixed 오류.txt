@@ -1,0 +1,10 @@
+아이폰 스크롤 fixed 하단 이나 상단 뒷배경보이는 버그 수정
+
+html.full 태그 등에 아래 내용 추가
+
+position: fixed;
+    width: 100%;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+

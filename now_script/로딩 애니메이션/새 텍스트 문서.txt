@@ -1,0 +1,51 @@
+
+
+
+
+
+
+<div class="loding_wrap">
+        <div class="loding">
+            <div class="loding_image txt-cnt">
+                <img src="../../content/images/lodingbar.gif" alt="쌍쌍바 로딩 이미지">
+                <span>어린시절을 소환 중입니다.</span>
+            </div>
+            <!-- //loding_image -->
+        </div>
+        <!-- //loding -->
+    </div>
+    <!-- //loding_wrap -->
+
+
+
+/* 로딩 */
+.loding_wrap { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: #ffefce; }
+.loding_wrap.on { display: block; }
+.loding { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: #ffefce; opacity: 1; transition: opacity 1s; }
+.loding.clear { opacity: 0; transition: opacity 1s; }
+.loding .loding_image { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 21.87rem; }
+.loding .loding_image span { font-size: 1.56rem; color: #4e2701; line-height: 1.52; }
+
+/* body 스크롤 방지 */
+.stop_scroll { height: 100%; overflow: hidden; }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    document.body.className = "stop_scroll";
+
+    const lodingbars = document.querySelector(".loding_wrap");
+    const lodingbar = document.querySelector(".loding");
+    
+    lodingbars.className = "loding_wrap on";
+    setTimeout(function () {
+        document.body.className = "";
+        lodingbar.className = "loding clear";
+    }, 3000);
+    setTimeout(function () {
+        lodingbars.className = "loding_wrap";
+    }, 3400);
+
+});

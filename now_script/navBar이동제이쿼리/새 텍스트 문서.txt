@@ -1,0 +1,35 @@
+ (function ($) {
+        // navbar 애니메이션
+        const navbar = $(".nav .nav_list li");
+        let navHeight = navbar.height();
+
+            navbar.click(function(e) {
+                e.preventDefault();
+    
+                const safe = $("#safe").offset().top - navHeight;
+                const video = $("#video").offset().top - navHeight;
+                const event = $("#event").offset().top - navHeight;
+                const join = $("#join").offset().top - navHeight;
+                const headerTop = $(".header").offset().top; // 21 05 13 네이블 수정 추가
+    
+                let target = $(this);
+                let index = target.index();
+    
+                if( index==0 ) {
+                    $("html, body").animate({ scrollTop: headerTop }, 600);// 21 05 13 네이블 수정
+                } else if ( index==1 ) {
+                    $("html, body").animate({ scrollTop: video  }, 600);
+                } else if (index==2){
+                    $("html, body").animate({ scrollTop: event }, 600);
+                } else {
+                    $("html, body").animate({ scrollTop: join }, 600);
+                }
+            });
+            // 페이지 가장 상단으로 이동
+        const pageTop = $(".header .header_logo > a");
+            pageTop.click(function(e) {
+                e.preventDefault();
+                const pageTo = $("html").offset().top;
+                $("html, body").animate({ scrollTop: pageTo }, 600);
+        });
+    })(jQuery);

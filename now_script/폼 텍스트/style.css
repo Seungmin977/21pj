@@ -1,0 +1,290 @@
+@charset "utf-8";
+
+.wrap {
+  /* padding: 0 0 16.25rem 0; */
+  background: url(../../content/images/zeiss-main-bg.png) no-repeat center; /* 21 04 13 네이블 2차 수정 */
+  background-size: cover;
+}
+
+/* 헤더 */
+.header {
+  padding: 0 0 8.75rem;
+}
+
+.header .header_title {
+  padding: 2.5rem 0 0 0;
+  text-align: right;
+}
+
+.header .header_title .header_logo {
+  display: inline-block;
+  width: 3.75rem;
+  font-size: 0;
+}
+
+.header .header_title .header_logo .mb_logo {
+  display: none;
+}
+
+/* 컨텐츠 사전 등록 */
+.contents {
+  color: #ffffff;
+}
+.contents .content_title {
+  margin: 2.5rem 0 0 0;
+  position: relative;
+  font-size: 4rem;
+  line-height: 4.56rem;
+  /* font-family: "Hind", sans-serif; */
+}
+.contents .content_title:before {
+  content: "";
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  width: 5rem;
+  height: 1px;
+  background: #ffffff;
+}
+.contents .content_text {
+  margin: 5rem 0 2.5rem 0;
+  font-size: 1.5rem;
+}
+
+/* 푸터 */
+.footer {
+  height: 6.25rem;
+  line-height: 6.25rem;
+  background-color: #f9f9fc;
+}
+.footer .footer_wrap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.87rem;
+}
+
+.footer .footer_wrap > p {
+  font-family: "Hind", sans-serif;
+}
+
+.footer .footer_wrap .footer_text {
+  color: #8c8d8e;
+}
+.footer .footer_wrap .footer_btn {
+  text-align: center;
+}
+.footer .footer_wrap .footer_btn a {
+  display: inline-block;
+  width: 11.25rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border: 1px solid #bcbdbc;
+}
+
+/* 21 04 13 네이블 2차 수정 추가 */
+/* 로그인 부분 */
+
+.contents.login .content_title {
+  font-size: 3.62rem;
+  color: #151e8d;
+  line-height: 1.27;
+}
+
+.contents.login .content_title:before {
+  display: none;
+}
+
+.contents.login .content_text {
+  position: relative;
+  margin: 1.25rem 0 0 0;
+  padding: 0 0 0 1.06rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e1dd;
+}
+
+.contents.login .content_text > span {
+  position: absolute;
+  left: 0;
+}
+
+.contents .content_login_form {
+  padding: 3.75rem 0 0 0;
+}
+.contents .content_login_form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 33.75rem;
+  margin: 0 0 0.62rem;
+}
+.contents .content_login_form div:nth-child(2) {
+  margin: 0;
+}
+.contents .content_login_form div > label {
+  width: 33.33%;
+}
+.contents .content_login_form div > label span {
+  font-size: 1.25rem;
+}
+.contents .content_login_form div > input {
+  font-size: 1.5rem;
+  width: 66.66%;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+  padding: 0 0 0 2.5rem;
+}
+
+.contents.login .content_btn {
+  margin: 3.75rem 0 0 0;
+}
+.contents.login .content_btn a {
+  font-size: 1.5rem;
+  width: 33.75rem;
+}
+
+/* //21 04 13 네이블 2차 수정 추가 */
+
+@media (max-width: 768.98px) {
+  html {
+    font-size: 62.5%;
+    /* 10px */
+  }
+
+  .wrap1170 {
+    padding: 0 20px;
+  }
+
+  /* 21 04 13 네이블 2차 수정 */
+  .contents .content_login_form div > label span {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .contents.login .content_text {
+    padding: 0 0 0 2.06rem;
+    font-size: 1.6rem;
+  }
+
+  .footer .footer_wrap .footer_text {
+    font-size: 1.4rem;
+  }
+  .footer .footer_wrap .footer_btn a {
+    font-size: 1.4rem;
+    width: 15.25rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  .contents.login .content_btn a {
+    font-size: 2rem;
+    height: 7rem;
+    line-height: 7rem;
+  }
+
+  .contents .content_login_form div > input {
+    font-size: 2rem;
+  }
+  /* //21 04 13 네이블 2차 수정 */
+}
+
+@media (max-width: 575.98px) {
+  html {
+    font-size: 50%;
+    /* 8px */
+  }
+
+  .wrap {
+    background: url(../../content/images/zeiss-main-mb-bg.png) no-repeat;
+    background-size: cover;
+  }
+  .header {
+    padding: 0 0 16.25rem;
+  }
+  .header .header_title {
+    padding: 5.31rem 0 0 0;
+  }
+  .header .header_title .header_logo {
+    width: 6.25rem;
+  }
+  .header_logo .pc_logo {
+    display: none;
+  }
+  .header_logo .mb_logo {
+    display: block !important;
+  }
+
+  .contents .content_title {
+    font-size: 5.25rem;
+    line-height: 1.23;
+  }
+
+  .contents .content_text {
+    font-size: 2.25rem;
+  }
+
+  .content_btn {
+    padding: 0 0 27.31rem;
+  }
+
+  .content_btn a {
+    width: 100%;
+    font-size: 2.25rem;
+    height: 7.5rem;
+    line-height: 7.5rem;
+  }
+
+  .footer {
+    height: 10rem;
+    line-height: 10rem;
+  }
+
+  .footer .footer_wrap > p {
+    font-size: 1.25rem;
+  }
+  .footer .footer_wrap .footer_btn a {
+    width: 13.12rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* 21 04 13 네이블 2차 수정  */
+@media (max-width: 360.98px) {
+  .footer .footer_wrap .footer_text {
+    font-size: inherit;
+  }
+}
+/* //21 04 13 네이블 2차 수정 */
+
+@media (max-width: 320.98px) {
+  .footer .footer_wrap {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* 21 04 13 네이블 2차 수정 */
+@media (max-width: 280.98px) {
+  .contents .content_login_form div {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contents .content_login_form div > label {
+    margin-bottom: 10px;
+  }
+
+  .contents .content_login_form div > input {
+    width: 100%;
+    font-size: 1.75rem;
+  }
+  .contents.login .content_btn a {
+    width: 100%;
+  }
+}
+/* //21 04 13 네이블 2차 수정 */

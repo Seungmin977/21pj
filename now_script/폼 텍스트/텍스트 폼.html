@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="fome.css">
+    <link rel="stylesheet" href="privacy.css">
+</head>
+
+<body>
+    <div class="wrap1170">
+        <div>
+            <form>
+                <h3>참석자 정보</h3>
+                <div class="form_lay flex-box flex-spc__btw pt60">
+                    <div class="flex-box flex-col">
+                        <label class="pb20">안경원 명 <em class="star">*</em></label>
+                        <input type="text">
+                    </div>
+                    <div class="flex-box flex-col">
+                        <label class="pb20">등록자 명 <em class="star">*</em></label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="form_lay flex-box flex-spc__btw">
+                    <div class="flex-box flex-col">
+                        <label class="pb20">핸드폰 번호 <em class="star">*</em></label>
+                        <input type="tel">
+                    </div>
+                </div>
+                <div class="form_lay flex-box flex-spc__btw">
+                    <div class="flex-box flex-col">
+                        <span class="pb20">자이스 거래 코드 유무 <em class="star">*</em></span>
+                        <ul class="flex-box flex-align__cnt">
+                            <li class="from_check"><input type="radio" name="codes" id="codes_radio1"><label
+                                    for="codes_radio1"><span>있다</span></label></li>
+                            <li class="from_check"><input type="radio" name="codes" id="codes_radio2"><label
+                                    for="codes_radio2"><span>없다</span></label></li>
+                        </ul>
+                    </div>
+                    <div class="flex-box flex-col">
+                        <label class="pb20">자이스 거래 코드</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="form_lay flex-box flex-col">
+                    <span class="pb20">신제품 런칭쇼를 알게 된 경로 <em class="star">*</em></span>
+                    <ul class="flex-box flex-spc__btw pb20">
+                        <li class="from_check"><input type="checkbox" id="check1_1"><label
+                                for="check1_1"><span>주문사이트(czc.co.kr / visustore)</span></label></li>
+                        <li class="from_check"><input type="checkbox" id="check1_2"><label for="check1_2"><span>지인
+                                    추천</span></label></li>
+                        <li class="from_check"><input type="checkbox" id="check1_3"><label for="check1_3"><span>자이스 직원
+                                    추천</span></label></li>
+                        <li class="from_check"><input type="checkbox" id="check1_4"><label for="check1_4"><span>신문
+                                    광고</span></label></li>
+                        <li class="from_check"><input type="checkbox" id="check1_5"><label for="check1_5"
+                                class="addcheck"><span>기타(직접 작성)</span></label></li>
+                    </ul>
+                    <div class="addcheck_cont">
+                        <label class="txt-hidden" for="addchecks">기타(직접 작성)</label><input type="text" id="addchecks">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="event_wrap">
+        <div class="wrap750">
+            <h2 class="title pt40">응모자 정보</h2>
+            <form>
+                <div class="flex-box flex-col pt60 pb50">
+                    <label class="pb30">이름</label>
+                    <input type="text">
+                </div>
+                <div class="flex-box flex-col pb50">
+                    <label class="pb30">핸드폰 번호</label>
+                    <input type="tel">
+                </div>
+                <div class="flex-box flex-col pb50">
+                    <label class="pb30">생년월일</label>
+                    <div class="births">
+                        <select>
+                            <option>2021</option>
+                            <option>2022</option>
+                        </select>
+                        <select>
+                            <option>12</option>
+                            <option>1</option>
+                        </select>
+                        <select>
+                            <option>01</option>
+                            <option>02</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="privacy">
+                    <dl>
+                        <dt class="pb25">개인정보 수집 동의</dt>
+                        <dd>
+                            아이부자앱 이벤트 (이하 '운영사무국'이라 합니다.)는 개인정보보호법을 준수하고 있으며,<br>
+                            아래와 같이 개인정보 수집·이용(제공)에 대한 귀하의 동의를 받고자 합니다.<br>
+                            내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오.<br>
+                            [관련법령 개인정보보호법 제15조, 제17조, 제22조, 제23조, 제24조]
+                        </dd>
+                    </dl>
+                    <div class="info_box mt30">
+                        <dl class="policy-wrap">
+                            <dt class="p20 bold">[필수] 개인(신용)정보 수집·이용 동의서<br>
+                                [아이부자 부자MBTI테스트 이벤트]</dt>
+                            <dd>
+                                <p>
+                                    (주)하나은행 귀중<br>
+                                    * 귀 행과의 아이부자 부자MBTI 이벤트와 관련하여 귀 행이 본인의 개인(신용)정보를 수집·이용하고자 하는 경우에는 「신용정보의 이용 및
+                                    보호에 관한
+                                    법률」, 「개인정보보호법」등 관계 법령에 따라 본인의 동의가 필요합니다.
+                                </p>
+                                <div class="policy-txt">
+                                    <table class="form-terms-tbl fs16">
+                                        <colgroup>
+                                            <col class="col33">
+                                            <col class="col33">
+                                            <col class="col33">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>수집/이용 목적</th>
+                                                <th>보유 및 이용기간</th>
+                                                <th>거부 권리 및 불이익</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="txt-cnt">이벤트 대상 확인, 경품 추첨 및 배송</td>
+                                                <td class="txt-cnt">동의일로부터 6개월까지 보유·이용<br>수집이용 목적 달성 후에는 사고 조사, 분쟁
+                                                    해결,
+                                                    민원 처리, 법령상 의무이행을 위한 목적으로만 보유·이용됩니다.</td>
+                                                <td>귀하는 동의를 거부하실 수 있습니다. 다만, 위 개인(신용)정보 수집·이용에 관한 동의는 “이벤트대상 확인,
+                                                    경품추첨 및
+                                                    배송을 위한” 필수적 사항이므로, 위 사항에 동의하셔야만 아이부자 부자MBTI 이벤트참여가 가능합니다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="pb20">수집·이용 항목<br>성명, 전화번호, 생년월일</p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="check_btn mt30">
+                        <input type="checkbox" id="checkd1">
+                        <label for="checkd1"><span>동의합니다.</span></label>
+                    </div>
+                    <!-- //check_btn -->
+                </div>
+                <!-- //privacy -->
+            </form>
+            <!-- //form -->
+        </div>
+        <!-- //wrap750 -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+
+
+// 팝업 클릭 반전
+    const checkBtn = document.querySelectorAll(".popup_wrap .box2_btn a");
+
+    for(let e = 0; e < checkBtn.length; e++ ){
+        checkBtn[e].addEventListener("click", function(b){
+            // b.classList.toggle("active");
+
+            for(let j = 0; j < checkBtn.length; j++ )
+            checkBtn[j].classList.remove("active");
+
+            b.target.classList.add("active");
+        });
+    }

@@ -1,0 +1,198 @@
+ <ul class="voting_list">
+                <li><a href="#vcont1" class="voting_btn active">김포</a></li>
+                <li><a href="#vcont2" class="voting_btn">분당·판교</a></li>
+                <li><a href="#vcont3" class="voting_btn">수원</a></li>
+                <li><a href="#vcont4" class="voting_btn">인천</a></li>
+                <li><a href="#vcont5" class="voting_btn">일산</a></li>
+            </ul>
+            <!-- //voting_list -->
+            <div id="vcont1" class="voting_cont">
+                <div class="box">
+                    <div class="voting_btn">
+                        <button class="btn1 on"><span>투표순</span></button>
+                        <button class="btn2"><span>가나다순</span></button>
+                    </div>
+                    <!-- //voting_btn -->
+                    <div class="search">
+                        <label class="txt-hidden">검색</label>
+                        <input type="text" placeholder="아파트명으로 검색해 주세요.">
+                    </div>
+                    <!-- //search -->
+                </div>
+                <!-- //box -->
+                <ul>
+                    <li class="mt0">
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li class="mt0">
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1<strong>내꽃마을 푸르지오</strong></span>
+                        <button class="image_btn snsOpen"><img src="../../content/images/hand-icon.png"
+                                alt="투표 아이콘 이미지"></button>
+                        <span class="count">999,999,999</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- //vcont1 voting_cont -->
+            <div id="vcont2" class="voting_cont no_active">
+                <div class="box">
+                    <div class="voting_btn">
+                        <button><span>투표순</span></button>
+                        <button><span>가나다순</span></button>
+                    </div>
+                    <!-- //voting_btn -->
+                    <div class="search">
+                        <label>검색</label>
+                        <input type="text" placeholder="아파트명으로 검색해 주세요.">
+                    </div>
+                    <!-- //search -->
+                </div>
+                <!-- //box -->
+                <ul>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="vcont3" class="voting_cont no_active">
+                <div class="box">
+                    <div class="voting_btn">
+                        <button><span>투표순</span></button>
+                        <button><span>가나다순</span></button>
+                    </div>
+                    <!-- //voting_btn -->
+                    <div class="search">
+                        <label>검색</label>
+                        <input type="text" placeholder="아파트명으로 검색해 주세요.">
+                    </div>
+                    <!-- //search -->
+                </div>
+                <!-- //box -->
+                <ul>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="vcont4" class="voting_cont no_active">
+                <div class="box">
+                    <div class="voting_btn">
+                        <button><span>투표순</span></button>
+                        <button><span>가나다순</span></button>
+                    </div>
+                    <!-- //voting_btn -->
+                    <div class="search">
+                        <label>검색</label>
+                        <input type="text" placeholder="아파트명으로 검색해 주세요.">
+                    </div>
+                    <!-- //search -->
+                </div>
+                <!-- //box -->
+                <ul>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="vcont5" class="voting_cont no_active">
+                <div class="box">
+                    <div class="voting_btn">
+                        <button><span>투표순</span></button>
+                        <button><span>가나다순</span></button>
+                    </div>
+                    <!-- //voting_btn -->
+                    <div class="search">
+                        <label>검색</label>
+                        <input type="text" placeholder="아파트명으로 검색해 주세요.">
+                    </div>
+                    <!-- //search -->
+                </div>
+                <!-- //box -->
+                <ul>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                    <li>
+                        <span class="title">NO.1 <strong>내꽃마을 푸르지오</strong></span>
+                        <img src="" alt="투표 아이콘 이미지">
+                        <span class="count">999,999,999</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- //voting_cont -->
+
+
+
+// 기본 탭 메뉴
+    // let tabBtn2 = document.querySelectorAll(".voting_btn"); // tab 버튼 전체 가져오기
+    // let tabContent2 = document.querySelectorAll(".voting_cont"); // tab 컨텐츠 전체 가져오기
+
+    // for(let i = 0; i < tabBtn2.length; i++ ){ // 반복문 tab 버튼 1 , 2 ....
+    //     tabBtn2[i].addEventListener("click",function(e){ // ex) tab[1] 첫번째 클릭 시
+    //         e.preventDefault(); //a 링크 기본 속성 제거
+    //         let target = e.target.getAttribute('href'); // 클릭한 버튼의 href 가져오기
+    //         let tabTarget = target.replace('#',''); // href 에서 # 제거 후 tabTarget에 넣음
+            
+    //         for(let y = 0; y < tabContent2.length; y++ ){ // tab 컨텐츠에 각 no_active를 줘서 전체 안보이게 하기
+    //             tabContent2[y].classList.add("no_active");
+    //         }
+            
+    //         console.log(tabBtn2);
+
+    //         document.getElementById(tabTarget).classList.remove("no_active"); // 선택된 # 제거된 tabtarget에 no_active 삭제하기 
+
+    //         for(let j = 0; j < tabBtn2.length; j++ ){
+    //             tabBtn2[j].classList.remove("active"); // 각 선택된 버튼 중 기존에 active 제거
+    //             e.target.classList.add('active'); // 선택된 버튼에 active 추가
+    //         }
+    //     });
+    // }

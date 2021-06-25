@@ -1,0 +1,140 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+    // 마우스 드래그 후 당첨, 꽝 창 이벤트
+    function onReveal(){
+        setTimeout(function () {
+            modalCheck.className = "popup_wrap check";
+            modalCheck.childNodes[1].className = "popup";
+            canvasOff.removeChild(canvasOff.childNodes[3]);
+        }, 150);
+
+        setTimeout(function () {
+            modalCheck1.classList.toggle("on")
+            modalCheck1.childNodes[1].className = "popup on";
+            // 캔바스 안보이게 겹치기 방지
+            canvasOff.className = "scratch off";
+            document.body.className = "stop_scroll";
+            modalCheck.className = "popup_wrap check";
+        }, 300);
+    }
+
+    // 행운의 복권 확인 클릭 이벤트
+    function checkOpens(e){
+        // modalCheck.classList.toggle("on");
+        e.classList.toggle("on");
+        document.body.className = "stop_scroll";
+        canvasOff.className = "";
+
+        // 캔바스
+        if(ScratchIt.isSupported()){
+            ScratchIt(
+                document.getElementById('scratch'),
+                '../../content/images/drag-image1.png',
+                '../../content/images/brush.png',
+                onReveal,
+                50
+            );
+        };
+
+        setTimeout(function () {
+            // modal_main.className = "popup on";
+            // modalCheck.childNodes[1].className = "popup on";
+            e.childNodes[1].className = "popup on";
+        }, 20);
+
+    }
+
+    // 행운의 복권 확인 닫기 이벤트
+    function checkClose(e){
+        setTimeout(function () {
+            // modal_main.className = "popup";
+            e.childNodes[1].className = "popup";
+        }, 50);
+        setTimeout(function () {
+            // modalCheck.className = "popup_wrap check";
+            e.classList.toggle("on");
+            // modalCheck1.className = "popup_wrap check type1";
+            document.body.className = "";
+            canvasOff.className = "scratch off";
+        }, 150);
+    }
+
+    // 팝업창 외부 클릭 시 닫기 이벤트
+    function closeEvent(e){
+        setTimeout(function () {
+            // modal_main.className = "popup";
+            e.childNodes[1].className = "popup";
+        }, 50);
+        setTimeout(function () {
+            e.classList.toggle("on");
+            document.body.className = "";
+            canvasOff.className = "scratch off";
+            // 전에 있던 캔바스 삭제
+            canvasOff.removeChild(canvasOff.childNodes[3]);
+        }, 150);
+    }
+
+    // 비정상 접속 팝업 , 종료 팝업
+    const modalWrap = document.querySelector(".popup_wrap.popup_main");
+    const modalEnd = document.querySelector(".popup_wrap.popup_end");
+    // modalWrap.className = "popup_wrap popup_main on";
+    // modalEnd.className = "popup_wrap popup_main on";
+    // //비정상 접속 팝업 , 종료 팝업
+
+    // 행운의 복권 팝업
+    const canvasOff = document.querySelector("#scratch");
+    const modalCheck = document.querySelector(".popup_wrap.check");
+    const modalCheck1 = document.querySelector(".popup_check1");
+    const modalCheck2 = document.querySelector(".popup_check2");
+    const modalOpen = document.querySelector(".popup_open");
+    const modalclose = document.querySelector(".close_btn");
+    const modalclose1 = document.querySelector(".close_btn_type1");
+    const modalclose2 = document.querySelector(".close_btn_type2");
+
+    // 팝업 오픈
+    modalOpen.addEventListener("click", function(e) {
+        e.preventDefault();
+        checkOpens(modalCheck);
+    });
+
+    // 팝업 닫기
+    modalclose.addEventListener("click", function(e) {
+        e.preventDefault();
+        checkClose(modalCheck);
+    });
+    modalclose1.addEventListener("click", function(e) {
+        e.preventDefault();
+        checkClose(modalCheck1);
+    });
+    modalclose2.addEventListener("click", function(e) {
+        e.preventDefault();
+        checkClose(modalCheck2);
+    });
+    
+    // 외부 클릭시 닫기
+    window.addEventListener("click", function(e){
+        if(e.target == modalCheck){
+            closeEvent(modalCheck);
+        }
+        else if(e.target == modalCheck1){
+            closeEvent(modalCheck1);
+        }
+        else if(e.target == modalCheck2){
+            closeEvent(modalCheck2);
+        }
+    });
+
+    // 외부 클릭시 닫기 아이폰 용
+    window.addEventListener("touchstart", function(e){
+        if(e.target == modalCheck){
+            closeEvent(modalCheck);
+        }
+        else if(e.target == modalCheck1){
+            closeEvent(modalCheck1);
+        }
+        else if(e.target == modalCheck2){
+            closeEvent(modalCheck2);
+        }
+    });
+});
+

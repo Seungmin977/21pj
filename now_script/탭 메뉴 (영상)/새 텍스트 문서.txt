@@ -1,0 +1,58 @@
+
+<section id="video" class="sk_campaign_video">
+        <div class="wrap900">
+            <h2 class="title">
+                <span class="image"><img src="../../content/images/text-logo.png" alt="내가늘지켜요"></span>
+                <span class="text fr">는</span>
+                <span class="text fr break"><strong class="fb">어린이 통학차량 멈춤 캠페인</strong>입니다</span>
+            </h2>
+            <!-- //title -->
+            <div id="video1" class="video contents_video">
+                <div class="contents_video">
+                    <iframe src="https://www.youtube.com/embed/AudgI7-q_n8" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen id="video_main"></iframe>
+                </div>
+                <!-- //contents_video -->
+            </div>
+            <!-- //video -->
+            <ul class="video_list">
+                <li><a href="#video1" class="video_tab_btn active">캠페인 영상1</a></li>
+                <li><a href="#video2" class="video_tab_btn">캠페인 영상2</a></li>
+                <li><a href="#video3" class="video_tab_btn">캠페인 영상3</a></li>
+            </ul>
+            <!-- //video_list -->
+        </div>
+    </section>
+    <!-- //sk_campaign_video -->
+
+
+
+// 텝 메뉴 유투브 영상
+    function changeIframeUrl(url)
+    {
+        document.getElementById("video_main").src = url;
+    }
+
+    let tabBtn = document.querySelectorAll(".video_tab_btn"); // tab 버튼 전체 가져오기
+    
+    for(let i = 0; i < tabBtn.length; i++ ){ // 반복문 tab 버튼 1 , 2 ....
+        tabBtn[i].addEventListener("click",function(e){ // ex) tab[1] 첫번째 클릭 시
+            e.preventDefault(); //a 링크 기본 속성 제거
+            let target = e.target.getAttribute('href'); // 클릭한 버튼의 href 가져오기
+            let tabTarget = target.replace('#',''); // href 에서 # 제거 후 tabTarget에 넣음
+
+            for(let j = 0; j < tabBtn.length; j++ ){
+                tabBtn[j].classList.remove("active"); // 각 선택된 버튼 중 기존에 active 제거
+                e.target.classList.add('active'); // 선택된 버튼에 active 추가
+
+                if(tabTarget == "video1"){ //video1
+                    changeIframeUrl('https://www.youtube.com/embed/AudgI7-q_n8');
+                } else if (tabTarget == "video2"){ // video2
+                    changeIframeUrl('https://www.youtube.com/embed/cho-6--Swuc');
+                } else if (tabTarget == "video3"){ // video3
+                    changeIframeUrl('https://www.youtube.com/embed/6xwYpQqIadg');
+                }
+            }
+        });
+    }

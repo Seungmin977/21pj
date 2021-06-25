@@ -1,0 +1,22 @@
+// 스크롤 이벤트
+    window.addEventListener("scroll",function() {
+        const navBar = document.querySelector(".nav");
+        const navH = document.querySelector(".nav").offsetTop;
+        const header = document.querySelector(".sk_campaign_info");
+        const headerTop = document.querySelector(".sk_campaign_info").offsetTop;
+        let winHeight = window.outerHeight; //문서 크기
+        let winW = window.pageYOffset; // 현재 스크롤
+        const eventH = document.querySelector(".pledge_event").offsetTop;
+
+        // fixed
+        if(winW >= navH){
+            // navBar.className ="nav fixed";
+            navBar.classList.add("fixed");
+            header.classList.add("cont_fixed");
+        } 
+
+        if(headerTop >= winW) {
+            navBar.classList.remove("fixed");
+            header.classList.remove("cont_fixed");
+        }
+    });

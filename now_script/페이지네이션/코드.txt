@@ -1,0 +1,78 @@
+<div class="flex-box flex-spc__cnt flex-align__cnt pagination">
+                    <!-- <a href="javascript:void(0);" class="paging-arw-prev"><img src="../../content/images/pagination-arw-prev.png" alt="이전 화살표 아이콘"></a> -->
+                    <a href="javascript:void(0);" class="paging-idx active">1</a>
+                    <a href="javascript:void(0);" class="paging-idx">2</a>
+                    <a href="javascript:void(0);" class="paging-idx">3</a>
+                    <a href="javascript:void(0);" class="paging-idx">4</a>
+                    <a href="javascript:void(0);" class="paging-idx">5</a>
+                    <!-- <a href="javascript:void(0);" class="paging-arw-next"><img src="../../content/images/pagination-arw-next.png" alt="다음 화살표 아이콘"></a> -->
+                </div>
+
+
+
+/*============================================================
+pagination
+============================================================*/
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.75rem;
+  padding-bottom: 6.25rem;
+}
+.paging-idx {
+  position: relative;
+  margin: 0.5rem 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* font-size: 0.8rem; */
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #9a9b9c;
+  text-align: center;
+  border-radius: 100%;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+}
+.paging-idx.active {
+  font-weight: 700;
+  color: #000000;
+}
+.paging-idx.active::after {
+  position: absolute;
+  content: "";
+  bottom: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 10px;
+  height: 2px;
+  /* background-color: #05141f; */
+}
+[class^="paging-arw"] {
+  width: 1.5rem;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.paging-arw-prev {
+  margin-right: 0.5rem;
+  opacity: 0.4;
+}
+.paging-arw-next {
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 575.98px) {
+  .paging-idx {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+  }
+  [class^="paging-arw"] {
+    width: 2.5rem;
+  }
+}

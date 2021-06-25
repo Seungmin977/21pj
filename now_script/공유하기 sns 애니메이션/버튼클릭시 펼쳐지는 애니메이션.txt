@@ -1,0 +1,141 @@
+<div class="main_share txt-cnt">
+        <img src="../../content/images/share_image1.png" class="share_image1" alt="공유 이미지">
+        <p class="main_share_text">어린시절 테스트 <span>공유하기</span></p>
+        <ul class="main_share_list">
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_facebook.png" alt="페이스북"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_twitter.png" alt="트위터"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_kakao.png" alt="카카오톡"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_naver_blog.png" alt="네이버 블로그"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_image2.png" alt="링크복사"></a></li>
+        </ul>
+        <!-- //main_share_list -->
+        <ul class="main_share_list_mb">
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_facebook_mb.png" alt="페이스북"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_twitter_mb.png" alt="트위터"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_kakao_mb.png" alt="카카오톡"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_naver_blog_mb.png" alt="네이버 블로그"></a></li>
+            <li class="main_share_list_item"><a href="javascript:void(0);"><img src="../../content/images/share_image2_mb.png" alt="링크복사"></a></li>
+        </ul>
+        <!-- //main_share_list_mb -->
+        <div class="main_share_btn">
+            <a href="javascript:void(0);"><img src="../../content/images/share_arrow.png" class="main_share_btn_image" alt="공유 더 보기 버튼"></a>
+        </div>
+        <!-- //main_share_btn -->
+    </div>
+    <!-- //main_share -->
+
+/* 메인 공유하기 */
+.main_share {
+  position: fixed;
+  top: 9rem;
+  right: 0;
+  width: 11.25rem;
+  background: #ed1d85;
+  border-radius: 2px;
+  overflow: hidden;
+  font-family: "NEXON Lv1 Gothic Bold";
+}
+.main_share .share_image1 {
+  width: 34px;
+  padding: 2rem 0 0 0;
+}
+.main_share .main_share_text {
+  padding: 1.2rem 0 2.1rem;
+  color: #ffefce;
+  font-size: 1.25rem;
+  letter-spacing: -1px;
+}
+.main_share .main_share_text span {
+  display: block;
+  padding: 0.62rem 0 0 0;
+  font-size: 1.87rem;
+}
+.main_share .main_share_list {
+  height: 0;
+  font-size: 0;
+  transition: height 0.5s;
+}
+.main_share .main_share_list .main_share_list_item a {
+  display: block;
+}
+.main_share .main_share_btn {
+  position: relative;
+  background: #fff;
+  z-index: 1;
+}
+.main_share .main_share_btn a {
+  display: block;
+  padding: 0.93rem 0;
+}
+.main_share .main_share_btn .main_share_btn_image {
+  width: 2.37rem;
+}
+
+/* 메인 공유하기 모바일 */
+.main_share .main_share_list_mb {
+  display: none;
+}
+.main_share .main_share_list_mb .main_share_list_item {
+  width: 5.62rem;
+  margin: 0 1.06rem 0 0;
+}
+.main_share .main_share_list_mb .main_share_list_item:last-child {
+  margin: 0;
+}
+
+/* 메인 공유하기 버튼 클릭 시 */
+.main_share .main_share_list.on {
+  height: 31.25rem;
+}
+.main_share .main_share_btn.on .main_share_btn_image {
+  transform: rotate(-180deg);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    // sns 공유
+    const shareBtn = document.querySelector(".main_share .main_share_btn > a");
+    const shareList = document.querySelector(".main_share .main_share_list");
+
+    shareBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        shareBtn.parentElement.classList.toggle("on");
+        shareList.classList.toggle("on");
+    });
+
+});
+
+
+@media (max-width: 575.98px) {
+
+  .main_share {
+    display: block;
+    position: static;
+    width: 100%;
+    background: #fff;
+    padding: 0 0 4.37rem;
+  }
+  .main_share .share_image1 {
+    display: none;
+  }
+  .main_share .main_share_text {
+    font-size: 1.56rem;
+    color: #ed1d85;
+    padding: 4.37rem 0 1.87rem;
+  }
+  .main_share .main_share_text span {
+    display: inline;
+  }
+  .main_share .main_share_list {
+    display: none;
+  }
+  .main_share .main_share_list_mb {
+    display: flex;
+    justify-content: center;
+  }
+  .main_share .main_share_btn {
+    display: none;
+  }
+}
+

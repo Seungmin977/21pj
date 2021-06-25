@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script src="jquery-3.4.0.min.js"></script>
+		<style>
+			body {
+				font-family: sans-serif;
+				
+			}
+			div {
+				text-align:center;
+			}
+			.s-txt {
+			    display: block;
+				font-size: 15px;
+				color: #b5b5b5;
+			}
+			a.event-btn {
+				display: inline-block;
+				min-width: 10px;
+				border-radius: 2.5rem;
+				background: #000;
+				padding: 1.0625rem 2rem;
+				color: #fff;
+				font-size: 1rem;
+				line-height: 1;
+				cursor: pointer;
+			}
+			.center {
+				margin: 100px 0 100px 0;
+			}
+			.sub {
+				margin: 50px 0 50px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="sub">
+				<span class="s-txt">
+					#갤럭시S10 #텐화점캠퍼스 #텐화점이벤트
+				</span>
+			</div>
+			<div class="sub">
+				<span class="btn-box">
+					<a class="event-btn hashtag" data-hash="#갤럭시S10 #텐화점캠퍼스 #텐화점이벤트" data-omni-type="microsite" data-omni="sec:microsite:galaxystenstore:apply_hashtags01_2">해시태그 복사하기</a>
+				</span>
+			</div>
+		</div>
+	<script>
+	;(function(win,doc,callback){'use strict';callback=callback||function(){};function detach(){if(doc.addEventListener){doc.removeEventListener('DOMContentLoaded',completed);}else{doc.detachEvent('onreadystatechange',completed);}}function completed(){if(doc.addEventListener||event.type==='load'||doc.readyState==='complete'){detach();callback(window,window.jQuery);}}function init(){if (doc.addEventListener){doc.addEventListener('DOMContentLoaded',completed);}else{doc.attachEvent('onreadystatechange',completed);}}init();})(window,document,function(win,$){
+		
+		window.Clipboard = (function(window, document, navigator) {
+			var textArea,
+				copy,
+				prevScrollTop;
+
+			function isOS() {
+				return navigator.userAgent.match(/ipad|iphone/i);
+			}
+
+			function createTextArea(el, text) {
+				textArea = document.createElement('textArea');
+				textArea.style.width="0px";
+				textArea.style.height="0px";
+				textArea.value = text;
+
+				var agent = navigator.userAgent.toLowerCase();
+				el.parentNode.appendChild(textArea);
+			}
+
+			function selectText() {
+				var range,
+					selection;
+
+				if (isOS()) {
+					range = document.createRange();
+					range.selectNodeContents(textArea);
+					selection = window.getSelection();
+					selection.removeAllRanges();
+					selection.addRange(range);
+					textArea.focus();
+					textArea.setSelectionRange(0, 999999);
+				} else {
+					textArea.select();
+				}
+			}
+
+			function copyToClipboard(el) {
+				document.execCommand('copy');
+				$(textArea).closest('.event-desc').focus();
+				el.parentNode.removeChild(textArea);
+			}
+
+			copy = function(el, text) {
+				createTextArea(el, text);
+				selectText();
+				copyToClipboard(el);
+			};
+
+			return {
+				copy: copy
+			};
+		})(window, document, navigator);
+		$('.hashtag').on('click',function(e) {
+			e.preventDefault();
+			var hashtagName = $(this).attr('data-hash');
+
+			if ( hashtagName ) {
+				Clipboard && Clipboard.copy(this, hashtagName);
+				alert('해시태그가 복사되었습니다.');
+			} else {
+				window.open(this.href);
+			}
+		});
+	});
+	</script>
