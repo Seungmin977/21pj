@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="inpy">
+        <textarea style="width:600px;" class="DOC_TEXT" name="DOC_TEXT"
+            placeholder="선택하신 서류사항 항목에 대한 내용을 200자 이내로 기재해주세요.">
+        </textarea>
+        <br />
+        <span style="color:#aaa;" id="counter">(0 / 최대 200자)</span>
+    </div>
+    <script>
+        // 다음은 한글은 1바이트, 영어는 2바이트로 계산해서 바이트 수로 알려주는 코드.
+        // 위 소스의 content.length 대신 이 함수로 리턴하게 바꿔주면 됨..
+        // function getTextLength(str) {
+        //     var len = 0;
+
+        //     for (var i = 0; i < str.length; i++) {
+        //         if (escape(str.charAt(i)).length == 6) {
+        //             len++;
+        //         }
+        //         len++;
+        //     }
+        //     return len;
+        // }
+        let inpy = document.querySelector(".inpy textarea");
+        console.log(inpy);
+
+        inpy.addEventListener("keyup", function () {
+            let value = this.value;
+            // console.log(value);
+            document.getElementById("counter").innerHTML = "(" + value.length + " / 최대 200자)"; // 글자 수 실시간 체크
+
+            if (value.length > 200) {
+                alert("최대 200자까지 입력 가능합니다.");
+                this.value = value.substring(0, 200); // 200글자 넘어가면 잘라내기
+                document.getElementById("counter").innerHTML = "( 200 / 최대 200자)"; // 텍스트 수정
+            }
+        });
+    </script>
+</body>
+
+</html>

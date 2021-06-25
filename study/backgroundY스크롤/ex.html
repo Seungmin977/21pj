@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+        }
+
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            width: 100%;
+            height: 450px;
+            background-image: url(./img/studys.png);
+            background-repeat: no-repeat;
+            /* background-position: center center; */
+            /* background-size: cover; */
+            background-attachment: fixed;
+        }
+
+        /* .bg2 {
+            height: 100%;
+            background-image: url(./img/mahkeo-222765.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .bg3 {
+            height: 100%;
+            background-image: url(./img/nitish-meena-111116.jpg);
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: cover;
+            background-attachment: fixed;
+        } */
+
+        .main {
+            position: relative;
+            padding: 20px;
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="main">
+        <p>
+            뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까
+            뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까
+            뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까뭐가문제입니까
+        </p>
+    </div>
+    <!-- <div class="bg2"></div>
+    <div class="bg3"></div> -->
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            let scrolled = window.pageYOffset;
+            let bg = document.querySelector(".bg");
+
+            bg.style.backgroundPositionY = -(scrolled * 0.6) + "px";
+
+        });
+    </script>
+
+</body>
+
+</html>
